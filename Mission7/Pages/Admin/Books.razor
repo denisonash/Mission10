@@ -1,0 +1,57 @@
+﻿@page "/admin/books"
+@page "/admin"
+@inherits OwningComponentBase<IBookstoreRepository>
+
+<table class="table table-sm table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (BookData?.Count() > 0)
+        {
+            @foreach (Books b in BookData)
+            {
+                <tr>
+                    <td></td>
+                </tr>
+            }
+        }
+        else
+            {
+                <tr>
+                    <td colspan="5" class="text-center">No Books</td>
+                </tr>
+            }
+    </tbody>
+</table>
+
+@code {
+    public IBookstoreRepository repo => Service;
+
+    public IEnumerable<Books> BookData { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await UpdateData();
+    }
+
+    public async Task UpdateData()
+    {
+        BookData = await repo.Books.ToListAsync();
+    }
+
+    public string GetDetailsUrl(long id) => $"/admin/books/details/{id}";
+
+    public string GetEditUrl(long id) => $"/admin/books/edit/{id}";
+
+    public async Task RemoveBook(Books b)
+    {
+        repo.DeleteBook(b);
+        await UpdateData();
+    }
+}

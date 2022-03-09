@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{A68BA16E-9984-4A1B-BDA6-D65744610777}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mission7/Pages/Admin/Books.razor">
+    <Files>
+      <File FileName="Mission7/Pages/Admin/Orders.razor" Line="38" Column="30" />
+      <File FileName="Mission7/Pages/Admin/Books.razor" Line="48" Column="37" />
+      <File FileName="Mission7/Pages/Admin/Index.cshtml" />
+      <File FileName="Mission7/Pages/Admin/Routed.razor" />
+      <File FileName="Mission7/Models/Purchase.cs" />
+      <File FileName="Mission7/Pages/Admin/OrdersTable.razor" />
+      <File FileName="Mission7/Models/EFBookstoreRepository.cs" />
+      <File FileName="Mission7/Models/IBookstoreRepository.cs" />
+      <File FileName="Mission7/Pages/Admin/AdminLayout.razor" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Mission7" expanded="True">
+            <Node name="Mission7" expanded="True">
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Admin" expanded="True">
+                  <Node name="Books.razor" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Mission7 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

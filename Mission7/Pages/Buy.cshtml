@@ -1,0 +1,50 @@
+﻿@page
+@model Mission7.Pages.BuyModel
+@{
+}
+
+<h2>Your Basket</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price Per Book</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var i in Model.cart.Items)
+        {
+            <tr>
+                <td style="font-family:Crimson Pro">@i.Books.Title</td>
+                <td style="font-family:Crimson Pro">@i.Quantity</td>
+                <td style="font-family:Crimson Pro">@i.Price.ToString("c")</td>
+                <td style="font-family:Crimson Pro">@((i.Quantity * i.Price).ToString("c"))</td>
+
+                <td class="text-center">
+                    <form method="post" asp-page-handler="Delete">
+                        <input type="hidden" name="bookId" value="@i.Books.BookID" />
+                        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                        <button type="submit" class="btn btn-sm btn-danger" style="font-family:Chivo">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3" style="font-family:Crimson Pro">Total:</td>
+            @*"c" formats it to currency*@
+            <td style="font-family:Crimson Pro">@Model.cart.CalculateTotal().ToString("c")</td>
+        </tr>
+    </tfoot>
+</table>
+
+<div>
+    <a class="btn btn-primary" href="@Model.ReturnUrl" style="font-family:Chivo">Continue Shopping</a>
+    <a class="btn btn-primary" asp-action="Checkout" asp-controller="Purchase" style="font-family:Chivo">Checkout</a>
+</div>
